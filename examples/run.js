@@ -1,17 +1,13 @@
 var yahooFinance = require('./../');
 
-// try {
-// 	yahooFinance.historical({
-// 		symbols: ['AAPL', 'YHOO'],
-// 		from: '2014-01-01',
-// 		to: '2015-10-20',
-// 		period: 'v' // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
-// 	}, function(err, quotes) {
-// 		console.log(quotes);
-// 	});
-// } catch (e) {
-// 	console.log(e);
-// }
+yahooFinance.historical({
+  symbols: ['^GSPC'],
+  from: '2015-01-20',
+  to: '2015-01-25',
+  period: 'd' // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
+}, function(err, quotes) {
+  console.log(quotes);
+});
 
 
 
