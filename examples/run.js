@@ -1,22 +1,28 @@
 var yahooFinance = require('./../');
 
 yahooFinance.historical({
-  symbols: ['^GSPC'],
+  symbols: ['AAPL'],
   from: '2015-01-20',
   to: '2015-01-25',
-  period: 'd' // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
+  period: '1d' // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
 }, function(err, quotes) {
-  console.log(quotes);
+  console.log('quotes', quotes);
 });
 
+yahooFinance.splits({
+	symbols: ['AAPL', 'YHOO'],
+	from: '1900-01-01',
+	to: '2015-10-20',
+}, function(err, quotes) {
+	console.log('splits', quotes);
+});
 
-
-yahooFinance.splitsAndDivs({
+yahooFinance.dividends({
 	symbols: ['AAPL', 'YHOO'],
 	from: '2014-01-01',
 	to: '2015-10-20',
 }, function(err, quotes) {
-	console.log(quotes);
+	console.log('dividends', quotes);
 });
 
 // http://ichart.finance.yahoo.com/x?s=IBM&a=00&b=2&c=1962&d=04&e=25&f=2011&g=v&y=0&z=30000
