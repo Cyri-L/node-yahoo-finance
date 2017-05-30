@@ -1,21 +1,21 @@
 var yahooFinance = require('./../');
 
-// yahooFinance.historical({
-//   symbols: ['AAPL'],
-//   from: '2015-01-20',
-//   to: '2015-01-25',
-//   period: '1d' // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
-// }, function(err, quotes) {
-//   console.log('quotes', quotes);
-// });
-
-yahooFinance.splits({
-	symbols: ['MT'],
-	from: '1900-01-01',
-	to: '2017-10-20',
+yahooFinance.historical({
+  symbols: ['IEAG.AS'],
+  from: '2017-01-20',
+  to: '2017-06-25',
+  period: '1d' // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
 }, function(err, quotes) {
-	console.log('splits', quotes);
+  console.log('quotes', quotes);
 });
+
+// yahooFinance.splits({
+// 	symbols: ['MT'],
+// 	from: '1900-01-01',
+// 	to: '2017-10-20',
+// }, function(err, quotes) {
+// 	console.log('splits', quotes);
+// });
 
 // yahooFinance.dividends({
 // 	symbols: ['AAPL', 'YHOO'],
