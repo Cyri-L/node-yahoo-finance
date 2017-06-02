@@ -1,7 +1,7 @@
 var yahooFinance = require('./../');
 
 yahooFinance.historical({
-  symbols: ['IEAG.AS'],
+  symbols: ['SGLN.L'],
   from: '2017-01-20',
   to: '2017-06-25',
   period: '1d' // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
